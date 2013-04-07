@@ -1,3 +1,5 @@
+import init.nokiarm-696board.usb.rc
+
 on early-init
 
     # IPv6 and WiFi support
