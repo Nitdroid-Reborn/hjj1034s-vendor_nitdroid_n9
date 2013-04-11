@@ -90,7 +90,7 @@ AkmSensor::~AkmSensor()
 
 int AkmSensor::enable(int32_t handle, int en)
 {
-    LOGD("enable: %d", en);
+    ALOGD("enable: %d", en);
     int what = -1;
 
     switch (handle) {
@@ -119,12 +119,12 @@ int AkmSensor::enable(int32_t handle, int en)
         else {
             if (data_fd > 0) {
                 int r = close(data_fd);
-                LOGD("data_fd closed: %d", r);
+                ALOGD("data_fd closed: %d", r);
                 data_fd = -1;
             }
         }
 
-        LOGE_IF(err, "Could not change sensor state (%s)", strerror(-err));
+        ALOGE_IF(err, "Could not change sensor state (%s)", strerror(-err));
         if (!err) {
             mEnabled &= ~(1<<what);
             mEnabled |= (uint32_t(flags)<<what);
@@ -157,7 +157,7 @@ int AkmSensor::readEvents(sensors_event_t* data, int count)
         return -EINVAL;
 
     if (data_fd <= 0) {
-        LOGD("readEvents, but data_fd == 0");
+        ALOGD("readEvents, but data_fd == 0");
         return 0;
     }
 
@@ -190,7 +190,7 @@ int AkmSensor::readEvents(sensors_event_t* data, int count)
                 mInputReader.next();
             }
         } else {
-            LOGE("AkmSensor: unknown event (type=%d, code=%d)",                    type, event->code);
+            ALOGE("AkmSensor: unknown event (type=%d, code=%d)",                    type, event->code);
             mInputReader.next();
         }
     }

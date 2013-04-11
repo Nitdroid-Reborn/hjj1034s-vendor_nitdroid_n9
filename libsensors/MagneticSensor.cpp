@@ -59,11 +59,11 @@ int MagneticSensor::setInitialState() {
 
 int MagneticSensor::enable(int32_t, int en) {
     int flags = en ? 1 : 0;
-    LOGD("MagneticSensor::enable %d", en);
+    ALOGD("MagneticSensor::enable %d", en);
     if (en && dev_fd <= 0) {
         dev_fd = open("/dev/ak89750", O_RDONLY);
         if (dev_fd <= 0) {
-            LOGE("Couldn't open %s (%s)", dev_name, strerror(errno));
+            ALOGE("Couldn't open %s (%s)", dev_name, strerror(errno));
             return -1;
         }
     }
@@ -79,7 +79,7 @@ bool MagneticSensor::hasPendingEvents() const {
 
 int MagneticSensor::setDelay(int32_t handle, int64_t delay_ns)
 {
-    LOGD("MagneticSensor::setDelay(%d, %ld) - ignored", handle, delay_ns);
+    ALOGD("MagneticSensor::setDelay(%d, %ld) - ignored", handle, delay_ns);
     return 0;
 }
 
@@ -90,7 +90,7 @@ int MagneticSensor::readEvents(sensors_event_t* data, int count)
 
     ak8975_data akdata;
     int r = read(dev_fd, &akdata, sizeof(akdata));
-    LOGD("MagneticSensor r: %d x: %d, y: %d, z: %d, v: %d", r, (int) akdata.x, (int) akdata.y, (int) akdata.z, (int) akdata.valid);
+    ALOGD("MagneticSensor r: %d x: %d, y: %d, z: %d, v: %d", r, (int) akdata.x, (int) akdata.y, (int) akdata.z, (int) akdata.valid);
 
     // TODO: matrix transform for calibration?
     mPendingEvent.magnetic.x = akdata.x;
