@@ -12,7 +12,7 @@ mount -o bind /dev ${HARMATTAN_ROOT}/dev
 
 mknod -m 644 ${HARMATTAN_ROOT}/dev/mtd1 c 90 2
 
-echo "ondemand" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+#echo "ondemand" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 
 start dsme
 start bme
