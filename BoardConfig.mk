@@ -6,6 +6,8 @@
 # The generic product target doesn't have any hardware-specific pieces.
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_SMP := false
+TARGET_ARCH := arm
 TARGET_BOARD_PLATFORM := omap3
 TARGET_ARCH_VARIANT	:= armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
