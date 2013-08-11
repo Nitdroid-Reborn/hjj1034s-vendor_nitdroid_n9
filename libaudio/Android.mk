@@ -14,6 +14,7 @@ LOCAL_STATIC_LIBRARIES += libmedia_helper
 LOCAL_WHOLE_STATIC_LIBRARIES := libaudiohw_legacy
 LOCAL_SHARED_LIBRARIES:= \
        libutils \
+       liblog \
        libhardware_legacy \
        libtinyalsa
 
