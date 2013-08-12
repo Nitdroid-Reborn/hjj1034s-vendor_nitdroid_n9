@@ -31,10 +31,11 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/init.rc:root/init.rc \
 	$(LOCAL_PATH)/init.nokiarm-696board.rc:root/init.nokiarm-696board.rc \
 	$(LOCAL_PATH)/init.nokiarm-680board.rc:root/init.nokiarm-680board.rc \
+	$(LOCAL_PATH)/init.nokiarm-696board.usb.rc:root/init.nokiarm-696board.usb.rc \
 	$(LOCAL_PATH)/ueventd.nokiarm-696board.rc:root/ueventd.nokiarm-696board.rc \
 	$(LOCAL_PATH)/ueventd.nokiarm-680board.rc:root/ueventd.nokiarm-680board.rc \
 	$(LOCAL_PATH)/etc/media_profiles.xml:system/etc/media_profiles.xml \
-	$(LOCAL_PATH)/etc/vold.fstab:system/etc/vold.fstab \
+	$(LOCAL_PATH)/fstab.nokiarm-696board:root/fstab.nokiarm-696board \
 	$(LOCAL_PATH)/etc/modem.conf:system/etc/modem.conf \
 	$(LOCAL_PATH)/etc/gps.conf:system/etc/gps.conf \
 	$(LOCAL_PATH)/etc/harmount.sh:system/etc/harmount.sh \

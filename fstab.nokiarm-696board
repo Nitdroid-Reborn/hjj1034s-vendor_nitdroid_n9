@@ -1,0 +1,6 @@
+# Android 4.3 vol
+# Format of this file is described here:
+# http://source.android.com/devices/tech/storage/index.html
+
+# eMMC / emulated sdcard
+/devices/platform/mmci-omap-hs.1/mmc_host/mmc0/mmc0:0001 /storage/sdcard0 vfat defaults voldmanaged=sdcard:auto
